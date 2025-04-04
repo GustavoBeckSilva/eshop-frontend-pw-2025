@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -9,23 +8,30 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Menu from './componentes/telas/menu';
 import Home from './componentes/telas/home';
 import Sobre from './componentes/telas/sobre';
+import Categoria from './componentes/telas/categoria/Categoria';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Menu/>,
+    element: <Menu />,
     children: [
       {
         index: true,
-        element: <Home/>
+        element: <Home />,
       },
       {
         path: "/sobre",
-        element: <Sobre/>
-      }
+        element: <Sobre />,
+      }     
+      ,
+      {
+        path: "/categorias",
+        element: <Categoria />,
+      }         
     ]
   }
-])
+
+]);
 
 function App() {
   return (
